@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas"></canvas>
+<script>
+    //Bài 1:Cho danh sách các điểm thi ở trong một mảng. Hãy viết hàm
+    //findAvg() với đầu vào là một mảng điểm và đầu ra là điểm trung
+    //bình của danh sách điểm thi. (không dùng hàm có sẵn để tính)
+    /*
+    function findAvg(scores) {
+        let sum = 0;
+        for (let i = 0; i < scores.length; i++) {
+             sum += scores[i];
+        }
+        return sum/scores.length
+    }
+    let scores = [7,9,10,9,8]
+    console.log('Điểm trung bình: ' + findAvg(scores))
+
+    */
+
+    //Bài 2:Viết hàm insertNumberToArray() nhận vào một mảng các số
+    //nguyên, một số nguyên x, và một số nguyên vị trí index. Hàm
+    //trả về mảng ban đầu nếu vị trí index có giá trị nhỏ hơn 0 hoặc
+    //lớn hơn chiều dài mảng. Nếu không thì trả về mảng mới đã
+    //được thêm số x vào vị trí index. (không dùng hàm có sẵn để
+    //tính)
+/*
+    function insertNumberToArray(arr, num, index) {
+        if(index | index[arr.length]) {
+            return arr;
+        }
+
+        for (let i = arr.length - 1; i >= index; i--) {
+            arr[i + 1] = arr[i];
+        }
+        arr[index] = num;
+        return arr;
+    }
+
+
+    const test_arr = [7,8,10,22,12,3,5];
+    const test_num = 7;
+    const test_index = 5;
+
+    console.log(insertNumberToArray(test_arr, test_num, test_index));
+
+
+*/
+    //Bài 3:Viết hàm sumOfListPrime() nhận vào một số nguyên x , hàm trả
+    //về giá trị là tổng các số nguyên tố từ 0 cho tới x.
+/*
+    function isPrime(x) {
+        if (x <= 1) {
+            return false;
+        }
+        if (x <= 3) {
+            return true;
+        }
+
+        if (x % 2 === 0 || x % 3 === 0) {
+            return false;
+        }
+        for (let i = 5; i * i <= x; i += 6) {
+            if (x % i === 0 || x % (i + 2) === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function sumOfListPrime(x) {
+        let sum = 0;
+        for (let i = 2; i <= x; i++) {
+            if (isPrime(i)) {
+                sum += i;
+            }
+        }
+        return sum;
+    }
+
+    console.log(sumOfListPrime(20));
+*/
+
+
+    //Bài 4:Hãy viết một chương trình để biểu diễn hình tròn, với mô tả
+    //của lớp hình tròn như sau:
+    class Circle {
+        constructor(x, y, r, color) {
+            this.x = x;
+            this.y = y;
+            this.r = r;
+            this.color = color;
+        }
+
+        render(canvas) {
+            let ctx = canvas.getContext("2d");
+            ctx.fillStyle = this.color;
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI);
+            ctx.fill();
+        }
+    }
+
+    let circle = new Circle(50, 50, 80, "#000000");
+    let art = document.getElementById("myCanvas");
+    circle.render(art);
+
+
+
+</script>
+</body>
+</html>
