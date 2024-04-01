@@ -29,9 +29,8 @@
     //lớn hơn chiều dài mảng. Nếu không thì trả về mảng mới đã
     //được thêm số x vào vị trí index. (không dùng hàm có sẵn để
     //tính)
-
     function insertNumberToArray(arr, num, index) {
-        if(index | arr.length) {
+        if(index < 0 || index > arr.length) {
             return arr;
         }
 
@@ -43,8 +42,8 @@
     }
 
 
-    const test_arr = [7,8,10,22,12,3,5];
-    const test_num = 7;
+    const test_arr = [8, 10, 10, 8, 8, 7, 9];
+    const test_num = 10;
     const test_index = 5;
 
     console.log(insertNumberToArray(test_arr, test_num, test_index));
